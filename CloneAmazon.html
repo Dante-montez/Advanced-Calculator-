@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#131921" />
+    <title>Amazon | Everyday finds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Amazon home"><span class="brand-word">amazon</span><span class="brand-smile"></span></a>
+      <button class="delivery location-button" type="button" aria-label="Choose delivery location">
+        <i data-lucide="map-pin"></i><span><small>Deliver to</small><strong>Seattle 98101</strong></span>
+      </button>
+      <form class="search" role="search">
+        <label class="sr-only" for="search-input">Search Amazon</label>
+        <select aria-label="Search category" id="category-select"><option value="all">All</option><option>Electronics</option><option>Home</option><option>Style</option><option>Outdoors</option></select>
+        <input id="search-input" type="search" placeholder="Search Amazon" autocomplete="off" />
+        <button type="submit" aria-label="Search"><i data-lucide="search"></i></button>
+      </form>
+      <button class="header-link language" type="button"><span class="flag">🇺🇸</span><strong>EN</strong><i data-lucide="chevron-down"></i></button>
+      <a class="header-link account" href="#deals"><span><small>Hello, sign in</small><strong>Account &amp; Lists</strong></span><i data-lucide="chevron-down"></i></a>
+      <a class="header-link orders" href="#deals"><span><small>Returns</small><strong>&amp; Orders</strong></span></a>
+      <button class="cart-button" type="button" aria-label="Open cart"><span class="cart-count">0</span><i data-lucide="shopping-cart"></i><strong>Cart</strong></button>
+    </header>
+    <nav class="subnav" aria-label="Main navigation">
+      <a class="all-menu" href="#categories"><i data-lucide="menu"></i><strong>All</strong></a>
+      <a href="#deals">Today's Deals</a><a href="customer-service.html">Customer Service</a><a href="#products">Registry</a><a href="#products">Gift Cards</a><a href="#products">Sell</a>
+      <a class="prime-link" href="#prime"><i data-lucide="play"></i><span>prime</span><small>Try 30 days free</small></a>
+    </nav>
+
+    <main id="home">
+      <section class="hero" aria-label="Featured offer">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=2000&q=85" alt="Modern headphones and home electronics" />
+        <div class="hero-scrim"></div>
+        <div class="hero-copy"><span class="eyebrow">THE EVERYDAY EDIT</span><h1>Little upgrades.<br />Big everyday energy.</h1><p>Fresh finds for your desk, your downtime, and everywhere in between.</p><a class="hero-cta" href="#products">Explore what's new <i data-lucide="arrow-up-right"></i></a></div>
+        <div class="hero-pagination"><button class="hero-prev" aria-label="Previous feature"><i data-lucide="chevron-left"></i></button><span class="slide-indicator"><b>01</b> / 03</span><button class="hero-next" aria-label="Next feature"><i data-lucide="chevron-right"></i></button></div>
+      </section>
+
+      <section class="benefits" aria-label="Shopping benefits"><div><i data-lucide="truck"></i><span><strong>Fast, free delivery</strong><small>On millions of items</small></span></div><div><i data-lucide="refresh-cw"></i><span><strong>Easy returns</strong><small>30-day return window</small></span></div><div><i data-lucide="shield-check"></i><span><strong>Shop with confidence</strong><small>Secure checkout, every time</small></span></div><div class="benefit-note"><span class="live-dot"></span> Your next good find is right here.</div></section>
+
+      <section class="category-section" id="categories">
+        <div class="section-heading"><div><span class="eyebrow dark-eyebrow">GOOD THINGS, SORTED</span><h2>What are you into?</h2></div><a href="#products">Browse all <i data-lucide="arrow-right"></i></a></div>
+        <div class="category-list" role="group" aria-label="Filter products by category">
+          <button class="category-chip active" data-category="all"><span class="chip-icon"><i data-lucide="sparkles"></i></span><span>Everything</span></button>
+          <button class="category-chip" data-category="Electronics"><span class="chip-icon coral"><i data-lucide="headphones"></i></span><span>Tech &amp; audio</span></button>
+          <button class="category-chip" data-category="Home"><span class="chip-icon green"><i data-lucide="lamp"></i></span><span>Home living</span></button>
+          <button class="category-chip" data-category="Style"><span class="chip-icon yellow"><i data-lucide="watch"></i></span><span>Style picks</span></button>
+          <button class="category-chip" data-category="Outdoors"><span class="chip-icon blue"><i data-lucide="mountain"></i></span><span>Out &amp; about</span></button>
+        </div>
+      </section>
+
+      <section class="deal-section" id="deals">
+        <div class="deal-intro"><span class="deal-tag"><i data-lucide="zap"></i> RIGHT NOW</span><h2>Good stuff.<br />Better prices.</h2><p>Small-batch finds and everyday favorites worth a second look.</p><a href="#products">Shop all deals <i data-lucide="arrow-right"></i></a><div class="deal-arrows"><button class="product-prev" aria-label="Previous products"><i data-lucide="arrow-left"></i></button><button class="product-next" aria-label="Next products"><i data-lucide="arrow-right"></i></button></div></div>
+        <div class="product-area"><div class="product-heading"><div><span class="eyebrow dark-eyebrow">HAND-PICKED FOR YOU</span><h2 id="products">Popular right now</h2></div><div class="results-count" aria-live="polite"></div></div><div class="product-grid" id="product-grid"></div><div class="empty-state" hidden>No finds for that search. Try another word or category.</div></div>
+      </section>
+
+      <section class="newsletter" id="prime"><div class="newsletter-mark"><i data-lucide="package-check"></i></div><div><span class="eyebrow">A GOOD THING IN YOUR INBOX</span><h2>Stay in the know.</h2><p>Get the latest finds and little surprises, once in a while.</p></div><form class="newsletter-form"><label class="sr-only" for="email">Email address</label><input id="email" type="email" placeholder="Your email address" required /><button type="submit">Sign me up <i data-lucide="arrow-right"></i></button></form></section>
+    </main>
+    <footer><a class="brand footer-brand" href="#home"><span class="brand-word">amazon</span><span class="brand-smile"></span></a><p>Find a little more joy in the everyday.</p><span>© 2026 Amazon-inspired storefront</span></footer>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <aside class="cart-drawer" aria-label="Shopping cart" aria-hidden="true"><div class="drawer-header"><h2>Your Cart <span class="drawer-count">(0)</span></h2><button class="close-cart" aria-label="Close cart"><i data-lucide="x"></i></button></div><div class="cart-items"></div><div class="cart-empty"><i data-lucide="shopping-bag"></i><strong>Your cart is taking a little breather.</strong><span>Find something you love and it’ll show up here.</span></div><div class="cart-footer" hidden><div class="subtotal"><span>Subtotal</span><strong>$0.00</strong></div><button class="checkout-button">Proceed to checkout <i data-lucide="arrow-right"></i></button></div></aside>
+    <div class="scrim" hidden></div>
+  </body>
+</html>
